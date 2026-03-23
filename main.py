@@ -6,8 +6,10 @@ from concurrent.futures import ThreadPoolExecutor
 st.set_page_config(page_title="Movie Recommender", layout="wide")
 
 # ---------------- LOAD DATA ----------------
-movies = pickle.load(open(r"C:\Users\moham\PycharmProjects\Movie recommendation\movie_dict.pkl", "rb"))
-similarity = pickle.load(open('similarity.pkl', 'rb'))
+BASE_DIR = os.path.dirname(__file__)
+
+movies = pickle.load(open(os.path.join(BASE_DIR, "movie_dict.pkl"), "rb"))
+similarity = pickle.load(open(os.path.join(BASE_DIR, "similarity.pkl"), "rb"))
 
 
 # ---------------- CACHE FUNCTION ----------------
