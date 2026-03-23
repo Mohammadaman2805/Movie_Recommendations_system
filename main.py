@@ -1,7 +1,7 @@
 import streamlit as st
 import pickle
 from concurrent.futures import ThreadPoolExecutor
-
+import os
 # ---------------- CONFIG ----------------
 st.set_page_config(page_title="Movie Recommender", layout="wide")
 
