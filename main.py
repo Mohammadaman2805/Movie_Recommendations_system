@@ -75,3 +75,7 @@ if st.button('Recommend'):
             with cols[i]:
                 st.text(names[i])
                 st.image(posters[i], use_container_width=True)
+
+
+import sys
+st.write(sys.version)
