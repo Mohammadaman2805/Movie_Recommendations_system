@@ -17,7 +17,7 @@ vectors = pickle.load(open(os.path.join(BASE_DIR, "vectors.pkl"), "rb"))
 @st.cache_data
 def fetch_poster(movie_id):
     try:
-        api_key = "c688b89d3846ad57f459b15fd60dc98a"
+        api_key = "c688b89d3846ad57f459b15fd60dc98a"  # 🔴 Replace this before GitHub
         url = f"https://api.themoviedb.org/3/movie/{movie_id}?api_key={api_key}"
 
         response = requests.get(url)
@@ -40,7 +40,6 @@ def recommend(movie):
 
     movie_index = movie_index[0]
 
-    # compute similarity dynamically
     distances = cosine_similarity([vectors[movie_index]], vectors)[0]
 
     movie_list = sorted(
@@ -75,7 +74,3 @@ if st.button('Recommend'):
             with cols[i]:
                 st.text(names[i])
                 st.image(posters[i], use_container_width=True)
-
-
-import sys
-st.write(sys.version)
